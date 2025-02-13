@@ -18,7 +18,7 @@ public class Vista extends javax.swing.JFrame {
      */
     public Vista() {
         initComponents();
-        this.tester = new Controlador();
+        this.tester = new Controlador(this);
     }
 
     /**
