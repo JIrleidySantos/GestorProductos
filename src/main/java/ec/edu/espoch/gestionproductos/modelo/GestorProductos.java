@@ -10,4 +10,37 @@ package ec.edu.espoch.gestionproductos.modelo;
  */
 public class GestorProductos {
     
+    int tamañoVector =5;
+    Producto[] objProductos= new Producto [tamañoVector];
+    
+    public String agregarProducto (Producto producto){
+    int cont=0;
+    String msg ="Producto ingresado";
+    Producto[] objProductos = new Producto[5];
+    for (int i = 0; i < objProductos.length; i++) {
+        if (objProductos[i]== null) {
+            objProductos [i].setId(i++);
+            objProductos [i].setNombre(producto.getNombre());
+            objProductos [i].setPrecio(producto.getPrecio());
+            objProductos [i].setDisponible(producto.isDisponible());
+            }else{
+                cont++;
+            }
+        } if(cont==objProductos.length){
+            msg = "Espacio en la lista insuficiente";
+        }
+        
+        return msg;
+            
+        }
+    
+    public Producto[] listarProductos(){
+        Producto[] assistProducto = new Producto [tamañoVector];
+        for (int i = 0, i );
+        
+        return null;
+        
+    }
 }
+    
+
