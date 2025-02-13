@@ -13,6 +13,8 @@ import ec.edu.espoch.gestionproductos.controlador.Controlador;
 public class Vista extends javax.swing.JFrame {
 
     private Controlador controlador;
+    private Listar listar;
+
     /**
      * Creates new form Vista
      */
@@ -44,10 +46,10 @@ public class Vista extends javax.swing.JFrame {
         btnEliminar = new javax.swing.JButton();
         lblError = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        Menu = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
+        MenuListar = new javax.swing.JMenuItem();
+        MenuAgregar1 = new javax.swing.JMenuItem();
+        MenuSalir = new javax.swing.JMenuItem();
 
         jMenuItem2.setText("jMenuItem2");
 
@@ -96,22 +98,32 @@ public class Vista extends javax.swing.JFrame {
 
         lblError.setText("---------------------------");
 
-        Menu.setText("Menu");
-        Menu.addActionListener(new java.awt.event.ActionListener() {
+        jMenu4.setText("Menu");
+
+        MenuListar.setText("Agregar Producto");
+        MenuListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuActionPerformed(evt);
+                MenuListarActionPerformed(evt);
             }
         });
+        jMenu4.add(MenuListar);
 
-        jMenu2.setText("Agregar Productos");
-        Menu.add(jMenu2);
+        MenuAgregar1.setText("Listar Producto");
+        MenuAgregar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuAgregar1ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(MenuAgregar1);
 
-        jMenu5.setText("Listar Productos");
-        Menu.add(jMenu5);
+        MenuSalir.setText("Salir");
+        MenuSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuSalirActionPerformed(evt);
+            }
+        });
+        jMenu4.add(MenuSalir);
 
-        jMenuBar1.add(Menu);
-
-        jMenu4.setText("Salir");
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -195,48 +207,56 @@ public class Vista extends javax.swing.JFrame {
     private void rbtDisponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDisponibleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtDisponibleActionPerformed
-       
-    private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
-        // TODO add your handling code here:
-        Listar objListarTareas = new Listar();
-        objListarTareas.setVisible(true);
-    }//GEN-LAST:event_MenuActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
         this.controlador.agregarProducto();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    private void MenuSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuSalirActionPerformed
+
+    private void MenuListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuListarActionPerformed
+        Vista objAgg = new Vista();
+        objAgg.setVisible(true);  // TODO add your handling code here:
+    }//GEN-LAST:event_MenuListarActionPerformed
+
+    private void MenuAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAgregar1ActionPerformed
+        Listar objList = new Listar();
+        objList.setVisible(true);     // TODO add your handling code here:
+    }//GEN-LAST:event_MenuAgregar1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public String getNombre(){
+    public String getNombre() {
         return txtProducto.getText();
     }
- 
-     public String getPrecio(){
+
+    public String getPrecio() {
         return txtPrecio.getText();
     }
-    
-    public boolean getDisponible(){
+
+    public boolean getDisponible() {
         return rbtDisponible.isSelected();
     }
-    
-    public void error(String text){
+
+    public void error(String text) {
         lblError.setText(text);
     }
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu Menu;
+    private javax.swing.JMenuItem MenuAgregar1;
+    private javax.swing.JMenuItem MenuListar;
+    private javax.swing.JMenuItem MenuSalir;
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JLabel lblError;
