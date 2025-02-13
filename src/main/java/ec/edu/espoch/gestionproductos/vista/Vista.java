@@ -88,6 +88,11 @@ public class Vista extends javax.swing.JFrame {
         lblError.setText("---------------------------");
 
         Menu.setText("Menu");
+        Menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuActionPerformed(evt);
+            }
+        });
 
         jMenu2.setText("Agregar Productos");
         Menu.add(jMenu2);
@@ -181,6 +186,12 @@ public class Vista extends javax.swing.JFrame {
     private void rbtDisponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDisponibleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtDisponibleActionPerformed
+
+    private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
+        // TODO add your handling code here:
+        Listar objListarTareas = new Listar();
+        objListarTareas.setVisible(true);
+    }//GEN-LAST:event_MenuActionPerformed
 
     /**
      * @param args the command line arguments
