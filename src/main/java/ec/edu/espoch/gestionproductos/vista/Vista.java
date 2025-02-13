@@ -38,6 +38,7 @@ public class Vista extends javax.swing.JFrame {
         rbtAgotado = new javax.swing.JRadioButton();
         btnAgregar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        lblError = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menu = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -84,6 +85,8 @@ public class Vista extends javax.swing.JFrame {
 
         btnEliminar.setText("Eliminar");
 
+        lblError.setText("---------------------------");
+
         Menu.setText("Menu");
 
         jMenu2.setText("Agregar Productos");
@@ -114,23 +117,29 @@ public class Vista extends javax.swing.JFrame {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(lblNombre)
                                         .addComponent(lblPrecio))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(btnAgregar)
-                                        .addComponent(rbtDisponible)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(rbtDisponible)
+                                        .addGap(3, 3, 3)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(64, 64, 64)
                                         .addComponent(rbtAgotado))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(49, 49, 49)
-                                        .addComponent(btnEliminar))
-                                    .addGroup(layout.createSequentialGroup()
                                         .addGap(25, 25, 25)
                                         .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(80, 80, 80)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(btnAgregar)
+                        .addGap(33, 33, 33)
+                        .addComponent(btnEliminar)))
                 .addContainerGap(69, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblError)
+                .addGap(124, 124, 124))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,11 +158,13 @@ public class Vista extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbtDisponible)
                     .addComponent(rbtAgotado))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAgregar)
                     .addComponent(btnEliminar))
-                .addGap(27, 27, 27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(lblError, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
 
         pack();
@@ -182,6 +193,13 @@ public class Vista extends javax.swing.JFrame {
         return txtPrecio.getText();
     }
     
+    public boolean getEstado(){
+        return rbtDisponible.isSelected();
+    }
+    
+    public void error(String text){
+        lblError.setText(text);
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -196,6 +214,7 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JLabel lblError;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblPrecio;
     private javax.swing.JRadioButton rbtAgotado;
