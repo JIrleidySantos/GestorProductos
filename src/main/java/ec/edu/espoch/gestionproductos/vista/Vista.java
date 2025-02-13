@@ -204,7 +204,7 @@ public class Vista extends javax.swing.JFrame {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
-        this.controlador.agregrarProducto();
+        this.controlador.agregarProducto();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     /**
