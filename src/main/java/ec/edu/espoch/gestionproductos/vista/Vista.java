@@ -12,13 +12,13 @@ import ec.edu.espoch.gestionproductos.controlador.Controlador;
  */
 public class Vista extends javax.swing.JFrame {
 
-    private Controlador tester;
+    private Controlador controlador;
     /**
      * Creates new form Vista
      */
     public Vista() {
         initComponents();
-        this.tester = new Controlador(this);
+        this.controlador = new Controlador(this);
     }
 
     /**
@@ -195,7 +195,7 @@ public class Vista extends javax.swing.JFrame {
     private void rbtDisponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDisponibleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtDisponibleActionPerformed
-
+       
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
         // TODO add your handling code here:
         Listar objListarTareas = new Listar();
@@ -204,7 +204,7 @@ public class Vista extends javax.swing.JFrame {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
-        
+        this.controlador.agregrarProducto();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     /**
