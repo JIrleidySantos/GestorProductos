@@ -15,9 +15,9 @@ public class TesterControlador {
         
     public void prueba(Producto objProducto){
         
-        System.out.println("Titulo: "+ objProducto.getProducto());
+       /* System.out.println("Titulo: "+ objProducto.getProducto());
         System.out.println("Descripcion: "+objProducto.getPrecio());
-        System.out.println("Estado: "+objProducto.isEstado());
+        System.out.println("Estado: "+objProducto.isEstado());*/
         
     }
     
