@@ -18,8 +18,8 @@ public class TesterVista {
     }
     
     public void agregrar(){
-        System.out.println("Nombre Producto"+vista.getTxtProducto());
-        System.out.println("El precio Producto"+vista.getTxtPrecio());
-        System.out.println("Su disponibilidad"+vista.getEstado());
+        System.out.println("Nombre Producto"+vista.getNombre());
+        System.out.println("El precio Producto"+vista.getPrecio());
+        System.out.println("Su disponibilidad"+vista.getDisponible());
     }
 }

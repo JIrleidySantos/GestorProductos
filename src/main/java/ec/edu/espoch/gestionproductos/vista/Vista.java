@@ -4,17 +4,21 @@
  */
 package ec.edu.espoch.gestionproductos.vista;
 
+import ec.edu.espoch.gestionproductos.controlador.Controlador;
+
 /**
  *
  * @author mundo
  */
 public class Vista extends javax.swing.JFrame {
 
+    private Controlador tester;
     /**
      * Creates new form Vista
      */
     public Vista() {
         initComponents();
+        this.tester = new Controlador();
     }
 
     /**
@@ -82,6 +86,11 @@ public class Vista extends javax.swing.JFrame {
         rbtAgotado.setText("Agotado");
 
         btnAgregar.setText("AGREGAR");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar");
 
@@ -193,18 +202,23 @@ public class Vista extends javax.swing.JFrame {
         objListarTareas.setVisible(true);
     }//GEN-LAST:event_MenuActionPerformed
 
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public String getTxtProducto(){
+    public String getNombre(){
         return txtProducto.getText();
     }
  
-     public String getTxtPrecio(){
+     public String getPrecio(){
         return txtPrecio.getText();
     }
     
-    public boolean getEstado(){
+    public boolean getDisponible(){
         return rbtDisponible.isSelected();
     }
     
