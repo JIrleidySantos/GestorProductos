@@ -35,12 +35,17 @@ public class GestorProductos {
         }
     
     public Producto[] listarProductos(){
-        Producto[] assistProducto = new Producto [tamañoVector];
-        for (int i = 0, i );
-        
-        return null;
-        
-    }
+        Producto[] assistProductos = new Producto [tamañoVector];
+        for (int i = 0; i < objProductos.length; i++ ){
+            if (objProductos[i].isDisponible()){
+                assistProductos[i].setId(objProductos[i].getId());
+                assistProductos[i].setNombre(objProductos[i].getNombre());
+                assistProductos[i].setPrecio(objProductos[i].getPrecio());
+                assistProductos[i].setDisponible(objProductos[i].isDisponible());
+            }
+        }   
+        return assistProductos;
+    } 
 }
     
 
